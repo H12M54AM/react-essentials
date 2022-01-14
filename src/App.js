@@ -1,7 +1,11 @@
+import React from 'react';
 import './App.css';
 
 function secretComponent() {
   return <h1>Secret stuff, you see, you die. BING BONG.</h1>;
+}
+function normalComponent() {
+  return <p>Hello </p>
 }
 
 function yesComponent() {
@@ -9,10 +13,11 @@ function yesComponent() {
 }
 
 function App(props) {
+  <normalComponent />
   if (props.authorized) {
-    <secretComponent />
+    return <secretComponent />
   } else {
-    <yesComponent />
+    return <yesComponent />
   }
 }
 
