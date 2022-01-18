@@ -1,20 +1,28 @@
-import React from 'react';
+import React, {useState}from 'react';
 import './App.css';
 
 
-function normalComponent() {
-  <p>Hello </p>
-}
-
-function yesComponent() {
-  <h1>Not so secret things. You good.</h1>;
+function Header() {
+  return (
+    <header>
+      <h1>
+        Hello
+      </h1>
+    </header>
+  );
 }
 
 function App() {
+  const [emotion, setEmotion] = useState('Happy');
+
   return (
-    <normalComponent />,
-    <secretComponent />,
-    <yesComponent />
+    <>
+      <h1>
+        I currently am {emotion}
+      </h1>
+      <button onClick={() => setEmotion("Angry")}>Angry</button>
+      <Header />,
+    </>
   );
 }
 
